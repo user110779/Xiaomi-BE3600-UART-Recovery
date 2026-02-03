@@ -25,9 +25,9 @@ GND -> GND. (VCC не чіпаємо!).
 
 Bash
 
-```setenv ipaddr 192.168.31.1
+setenv ipaddr 192.168.31.1
 setenv serverip 192.168.31.100
-setenv netmask 255.255.255.0```
+setenv netmask 255.255.255.0
 saveenv
 Перевір зв'язок: ping 192.168.31.100. Має бути host is alive.
 
