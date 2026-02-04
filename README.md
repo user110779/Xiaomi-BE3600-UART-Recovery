@@ -49,7 +49,7 @@ Xiaomi BE3600 має дві системи (rootfs та rootfs_1). Якщо ти
 
 * **На першу: setenv flag_boot_rootfs 0**
 * **На другу: setenv flag_boot_rootfs 1**
-* **saveenv``
+* **saveenv**
 
 6. Фінальний запуск
 Коли основні розділи (bootconfig, kernel, rootfs) відновлено:
