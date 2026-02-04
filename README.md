@@ -18,7 +18,7 @@
 3. Конфігурація оточення (Environment)
 Введи ці команди по черзі, щоб роутер зміг качати файли з твого ПК:
 
-```bash setenv ipaddr 192.168.31.1```bash
+```bash setenv ipaddr 192.168.31.1bash```
 ```bashsetenv serverip 192.168.31.100```bash
 ```bashsetenv netmask 255.255.255.0```bash
 ```bashsaveenv```bash
