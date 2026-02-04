@@ -18,10 +18,10 @@ GND -> GND.
 3. Конфігурація оточення (Environment)
 Введи ці команди по черзі, щоб роутер зміг качати файли з твого ПК:
 
-``setenv ipaddr 192.168.31.1
-setenv serverip 192.168.31.100
-setenv netmask 255.255.255.0
-saveenv``
+``setenv ipaddr 192.168.31.1``
+``setenv serverip 192.168.31.100``
+``setenv netmask 255.255.255.0``
+``saveenv``
 
 Перевір зв'язок: ping 192.168.31.100. Має бути host is alive.
 
