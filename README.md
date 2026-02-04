@@ -18,10 +18,11 @@ GND -> GND.
 3. Конфігурація оточення (Environment)
 Введи ці команди по черзі, щоб роутер зміг качати файли з твого ПК:
 
-setenv ipaddr 192.168.31.1
+``setenv ipaddr 192.168.31.1
 setenv serverip 192.168.31.100
 setenv netmask 255.255.255.0
-saveenv
+saveenv``
+
 Перевір зв'язок: ping 192.168.31.100. Має бути host is alive.
 
 4. Робота з розділами (алгоритм "заливки")
@@ -30,15 +31,15 @@ BE3600 має NAND-пам'ять. Ми не можемо шити прямо з 
 Крок 1: Дивимось карту пам'яті Введи smeminfo або mtdparts. Тобі потрібно знайти початкову адресу (Start) та розмір (Size) розділів, які ти хочеш відновити.
 Крок 2: Відновлення Kernel (Ядро) Приклад для розділу kernel (mtd23):
 
-tftp 0x44000000 mtd23.bin — качаємо файл в RAM.
+``tftp 0x44000000 mtd23.bin — качаємо файл в RAM.
 nand erase 0x02000000 0x00800000 — стираємо розділ у Flash (адреси беремо з smeminfo!).
-nand write 0x44000000 0x02000000 ${filesize} — записуємо.
+nand write 0x44000000 0x02000000 ${filesize} — записуємо.``
 
 Крок 3: Відновлення Rootfs (Система) Приклад для розділу rootfs (mtd24):
 
-tftp 0x44000000 mtd24.bin
+``tftp 0x44000000 mtd24.bin
 nand erase 0x02800000 0x04000000
-nand write 0x44000000 0x02800000 ${filesize}
+nand write 0x44000000 0x02800000 ${filesize}``
 
 5. Нюанс Dual Boot (Перемикання систем)
 Xiaomi BE3600 має дві системи (rootfs та rootfs_1). Якщо ти прошив одну, а роутер намагається вантажити іншу — він знову впаде в ребут.
@@ -46,14 +47,14 @@ Xiaomi BE3600 має дві системи (rootfs та rootfs_1). Якщо ти
 Щоб перевірити, яка система активна: printenv flag_boot_rootfs
 Щоб змінити активну систему:
 
-На першу: setenv flag_boot_rootfs 0
+``На першу: setenv flag_boot_rootfs 0
 На другу: setenv flag_boot_rootfs 1
-saveenv
+saveenv``
 
 6. Фінальний запуск
 Коли основні розділи (bootconfig, kernel, rootfs) відновлено:
 
-reset
+``reset``
 
 Що робити, якщо не знаєш адрес nand write?
 Якщо боїшся помилитися з адресами nand, є безпечніший варіант:
