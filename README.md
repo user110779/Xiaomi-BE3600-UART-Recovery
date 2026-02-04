@@ -18,13 +18,10 @@
 3. Конфігурація оточення (Environment)
 Введи ці команди по черзі, щоб роутер зміг качати файли з твого ПК:
 
-<p>Введи ці команди по черзі:</p>
-<pre style="background-color: #f6f8fa; padding: 10px; border-radius: 5px;">
-setenv ipaddr 192.168.31.1
-setenv serverip 192.168.31.100
-setenv netmask 255.255.255.0
-saveenv
-</pre>
+* **setenv ipaddr 192.168.31.1**
+* **setenv serverip 192.168.31.100**
+* **setenv netmask 255.255.255.0**
+* **saveenv**
 
 Перевір зв'язок: ping 192.168.31.100. Має бути host is alive.
 
